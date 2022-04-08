@@ -25,7 +25,7 @@
                                 <td>{{$post->title}}</td>
                                 <td>{{substr($post->content, 0, 30)}}</td>
                                 <td>{{$post->slug}}</td>
-                                <td>{{$post->category->name}}</td>
+                                <td>{{isset($post->category)?$post->category->name:'N.D.'}}</td>
 
                                 <td>
                                     <a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-primary">Vedi</a>
@@ -37,11 +37,11 @@
                                         <button type="submit" class="btn btn-danger">Elimina</button>
                                     </form>
                                 </td>
-                                
+
                             </tr>
                         @endforeach
                     </tbody>
-                </table>
+                  </table>
             </div>
         </div>
     </div>
